@@ -1,12 +1,14 @@
 <?php 
 $title = '勝敗を予想しよう！何問当たるかな？';
 
-$question = array(); // 配列
-$question = array('朝倉未来', '矢地祐介'); // 2択問題 
+$question1 = array();
+$question1 = array('朝倉未来', '矢地祐介');
+$answer = $question1[0];
 
-$answer = $question[0]; //正解
 
-shuffle($question); // 配列の中身をシャッフル
+$question2 = array();
+$question2 = array('朝倉海', 'マネル・ケイプ');
+$answer = $question2[0];
 ?>
 
 <!DOCTYPE html>
@@ -20,21 +22,27 @@ shuffle($question); // 配列の中身をシャッフル
 <body>
 
 <!-- *************************
-        参考サイト
+参考サイト
 https://kinocolog.com/quizprogram/
 ******************************  -->
 
-  <form action="answer.php" method="post">
-  
-    <!-- <input type="radio" name="question" value="<?php //echo $question[0]; ?>"><?php //echo $question[0]; ?><br>
-    <input type="radio" name="question" value="<?php //echo $question[0]; ?>"><?php //echo $question[1]; ?><br> -->
+<form action="answer.php" method="post">
 
-    <?php foreach($question as $value) { ?>
-    <?php //var_dump($value); ?>
-      <input type="radio" name="question" value="<?php echo $value; ?>"><?php echo $value; ?><br>
-    <?php } ?>
-    <input type="hidden" name="answer" value="<?php echo $answer ?>">
-    <input type="submit" value="回答する">
-  </form>
+<h2><?php echo $title ?></h2>
+<?php foreach ($question1 as $value) { ?>
+  <input type="radio" name="question1" value="<?php echo $value; ?>"><?php echo $value; ?><br>
+<?php } ?>
+  <input type="hidden" name="answer1" value="<?php echo $answer1; ?>">
+  <input type="submit" value="回答する">
+
+<?php foreach ($question2 as $value) { ?>
+  <input type="radio" name="question2" value="<?php echo $value; ?>"><?php echo $value; ?><br>
+<?php } ?>
+
+  <input type="hidden" name="answer" value="<?php echo $answer; ?>">
+  <input type="submit" value="回答する">
+
+</form>
+
 </body>
 </html>

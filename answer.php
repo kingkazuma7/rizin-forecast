@@ -2,10 +2,10 @@
 // answer.php
 
 $question = $_POST['question']; // ラジオボタンの内容を受け取る
-$answer = $_POST['answer']; // hiddenで送られた正解を受け取る
+$answer1 = $_POST['answer1']; // hiddenで送られた正解を受け取る
 
 // 結果の判定
-if ($question == $answer) {
+if ($question1 == $answer1) {
   $result = "正解！";
 } else {
   $result = "不正解...";
